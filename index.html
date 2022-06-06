@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baumans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,13 +19,17 @@
   </head>
   <body>
     <header>
+      <div class="x-sheets-logo"></div>
       <nav>
         <ul class="menu">
-          <li><a class="menu__item" href="#">home</a></li>
-          <li><a class="menu__item pre-order" href="#">pre-order now!</a></li>
+          <li class="menu__item">
+            <a class="menu__text" href="#">home</a>
+          </li>
           <!-- use text-transform: uppercase on all menu__item elements-->
           <!-- make this one have a cool blue background like in honkai impact pre register-->
-          <li><a class="menu__item" href="#">get in touch</a></li>
+          <li class="menu__item">
+            <a class="menu__text" href="#">get in touch</a>
+          </li>
         </ul>
         <button class="hamburger" aria-label="open menu">
           <span class="hamburger__top-bun"></span>
@@ -28,7 +38,9 @@
       </nav>
     </header>
     <main>
-      <section class="landing-page"></section>
+      <section class="landing-page">
+        <div class="landing-dark"></div>
+      </section>
     </main>
     <footer></footer>
     <script src="index.js"></script>
