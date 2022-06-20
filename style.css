@@ -49,7 +49,7 @@ header {
 
 .neon span {
   color: #646464;
-  animation: glow 3s linear infinite;
+  animation: glow 2.5s linear infinite;
 }
 
 .neon span:nth-child(1),
@@ -68,9 +68,12 @@ header {
 }
 
 .neon span:nth-child(7),
-.neon span:nth-child(8),
 .neon span:nth-child(9) {
   animation-delay: 2.75s;
+}
+
+.neon span:nth-child(8) {
+  animation-delay: 3s;
 }
 
 h1 {
@@ -80,7 +83,13 @@ h1 {
 .pre-order {
   all: unset;
   border: 1px solid #444;
+  background-color: #abe1fe;
   margin-top: 30px;
+}
+
+.active-menu {
+  border-right: 4px solid #2100f2;
+  animation: pulsating 3s infinite alternate ease-in-out;
 }
 
 /* hamburger menu */
@@ -113,7 +122,9 @@ h1 {
 .menu__item:first-child {
   margin-top: 50px;
 }
+
 .menu__text {
+  padding-right: 10px;
   font-size: 1.5rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -190,9 +201,18 @@ h1 {
   }
 }
 
+@keyframes pulsating {
+  from {
+  }
+  to {
+  }
+}
+
 @media (min-width: 600px) {
   .menu__text:hover,
-  .menu__text:focus {
+  .menu__text:focus-visible {
     text-decoration: underline;
+    transform: scale(1.2);
+    animation: glow 2.5s linear infinite;
   }
 }
