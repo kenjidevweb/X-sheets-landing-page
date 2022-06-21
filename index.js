@@ -16,3 +16,18 @@ const menuItems = document.querySelectorAll(".menu__text").forEach((item) => {
     item.classList.add("active-menu");
   }
 });
+
+const didAnimationEnd = document.querySelector(".neon span");
+const animatedItems = document.querySelectorAll(".neon span");
+
+didAnimationEnd.addEventListener("animationend", equalizeDelay); // it works, just needed to convert it into a function, also no need to use equalizeDelay"()" here, as it already executes the function
+
+function equalizeDelay() {
+  animatedItems.forEach((item) => {
+    item.style.animationDelay = "1s";
+    item.style.color = "#fff";
+    item.style.textShadow =
+      "0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff, 0 0 50px #43b7ff, 0 0 60px #43b7ff";
+    item.style.animation = "pulsating 4s alternate infinite";
+  });
+}
