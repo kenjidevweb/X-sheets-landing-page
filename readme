@@ -1,6 +1,8 @@
 Todos tomorrow:
 
-make it so the changes (text color, text-shadow) are kept after the animation (glow) ends 
+make it so the changes (text color, text-shadow) are kept after the animation (glow) ends
 Done, now I need to find out if there's a better way of doing this, I just applied the styels using javascript after the animation ends.
 
 adds breathing effect to the button lights
+
+https://feathericons.com/

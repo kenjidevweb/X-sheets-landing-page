@@ -28,6 +28,6 @@ function equalizeDelay() {
     item.style.color = "#fff";
     item.style.textShadow =
       "0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff, 0 0 50px #43b7ff, 0 0 60px #43b7ff";
-    item.style.animation = "pulsating 4s alternate infinite";
+    item.style.animation = "pulsating 3s alternate infinite ease-in";
   });
 }
