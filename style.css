@@ -1,4 +1,5 @@
 * {
+  /* outline: 1px solid lightgreen; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,6 +13,16 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+/* reusable */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* landing */
 
 .landing-page {
   position: relative;
@@ -45,7 +56,7 @@ header {
   text-align: center;
 }
 
-/*make text glow */
+/* landing glow */
 
 .neon span {
   color: #646464;
@@ -178,9 +189,52 @@ h1 {
   transform: scale(0.98);
 }
 
-.feature img {
+/* introduction */
+
+.background--black {
+  background-color: #121212;
+}
+
+.features__card img {
   width: 48px;
   height: 48px;
+  filter: invert(100%) sepia(4%) saturate(678%) hue-rotate(196deg)
+    brightness(117%) contrast(100%); /* This changes the svg color, in this case to white */
+}
+
+.introduction.container {
+  color: white;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.introduction__title {
+  font-size: 2rem;
+  margin-top: 4em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.paragraph {
+  margin-bottom: 4em;
+}
+
+.card__icon {
+  display: flex;
+  background-color: #43b7ff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  width: 90px;
+  height: 90px;
+}
+
+.features__card .paragraph,
+.card__title {
+  text-align: center;
 }
 
 @keyframes glow {
