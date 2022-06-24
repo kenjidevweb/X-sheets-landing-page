@@ -9,14 +9,14 @@ hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("open");
   menu.classList.toggle("menu-open");
 });
-
+/*
 const activeMenu = window.location.pathname;
 const menuItems = document.querySelectorAll(".menu__text").forEach((item) => {
   if (item.href.includes(`${activeMenu}`)) {
     item.classList.add("active-menu");
   }
 });
-
+*/
 const didAnimationEnd = document.querySelector(".neon span");
 const animatedItems = document.querySelectorAll(".neon span");
 
