@@ -15,6 +15,10 @@ header {
   justify-content: space-between;
 }
 
+img {
+  width: 100%; /*Doing this will assure the image will never be bigger than its container */
+}
+
 /* reusable */
 
 .container {
@@ -26,6 +30,11 @@ header {
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
 }
 
 /* landing */
@@ -201,9 +210,7 @@ h1 {
   background-color: #121212;
 }
 
-.features__card img {
-  width: 48px;
-  height: 48px;
+.features__card .icon {
   filter: invert(100%) sepia(4%) saturate(678%) hue-rotate(196deg)
     brightness(117%) contrast(100%); /* This changes the svg color, in this case to white */
 }
@@ -221,7 +228,6 @@ h1 {
 
 .card__icon {
   display: flex;
-  background-color: #43b7ff;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -229,6 +235,10 @@ h1 {
   margin-bottom: 1em;
   width: 90px;
   height: 90px;
+}
+
+.card__icon--features {
+  background-color: #43b7ff;
 }
 
 .features__card .card__title,
@@ -239,6 +249,29 @@ h1 {
 #introduction,
 #testimonials {
   background-color: black;
+}
+
+.testimonials.container {
+  gap: 2em;
+}
+
+.card__icon--testimonials {
+}
+
+.card__body {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px hsl(0, 0%, 80%);
+  width: 100%;
+}
+
+.card__title__testimonials {
+  color: #43b7ff;
+}
+
+.card__face {
+  border-radius: 50%;
 }
 
 @keyframes glow {
@@ -275,6 +308,9 @@ h1 {
     transform: scale(1.1);
     animation: glow 2.5s linear infinite;
   }
+  .introduction.container {
+    min-height: 40vh;
+  }
   .introduction__title {
     margin-top: 4em;
   }
@@ -283,6 +319,17 @@ h1 {
   }
   .paragraph {
     margin-bottom: 4em;
+  }
+  .features {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .features__card {
+    max-width: 240px;
+  }
+  .testimonials.container {
+    min-height: 60vh;
   }
 }
 /*
