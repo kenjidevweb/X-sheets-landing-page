@@ -26,6 +26,10 @@ button {
   all: unset;
 }
 
+footer {
+  background-color: #121212;
+}
+
 /* reusable */
 
 .container {
@@ -82,6 +86,10 @@ button {
 .cta {
   text-align: center;
   margin-left: 2.5em;
+  margin-bottom: 1em;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  border: 1px solid #43b7ff;
 }
 
 /* landing glow */
@@ -268,7 +276,7 @@ h1 {
 .split--left {
 }
 
-.split--right {
+.split--two {
   width: 90%;
   margin: 0 auto;
 }
@@ -337,6 +345,30 @@ h1 {
 
 .item__title {
   margin-bottom: 10px;
+}
+
+/* footer */
+
+.split--footer {
+  min-height: inherit;
+}
+
+.container--footer {
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 60vh;
+  padding-top: 3em;
+}
+
+.footer__title::after {
+  margin-top: 0.75em;
+  opacity: 0.9;
+  display: block;
+  content: "";
+  border-bottom: 1.5px solid #43b7ff;
+  height: 0;
+  width: 150px;
+  position: relative;
 }
 
 @keyframes glow {
@@ -414,11 +446,11 @@ h1 {
   .split {
     flex-direction: row;
   }
-  .split--left {
+  .split--one {
     width: 50%;
     margin-right: 2.1875em;
   }
-  .split--right {
+  .split--two {
     width: 50%;
     margin-top: 1.5em;
   }
