@@ -22,6 +22,10 @@ img {
   width: 100%; /*Doing this will assure the image will never be bigger than its container */
 }
 
+button {
+  all: unset;
+}
+
 /* reusable */
 
 .container {
@@ -73,6 +77,11 @@ img {
 .features__card,
 .card__title {
   text-align: center;
+}
+
+.cta {
+  text-align: center;
+  margin-left: 2.5em;
 }
 
 /* landing glow */
@@ -157,7 +166,6 @@ h1 {
 }
 
 .hamburger {
-  all: unset;
   top: 0;
   right: 0;
   position: fixed;
@@ -251,13 +259,18 @@ h1 {
 .split {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: #121212;
+}
+
+.split-group {
 }
 
 .split--left {
 }
 
-.split-right {
+.split--right {
+  width: 90%;
+  margin: 0 auto;
 }
 
 /*testimonials*/
@@ -307,13 +320,23 @@ h1 {
 
 .title--split {
   text-align: left;
-  width: 80%;
-  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.group-item {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
 }
 
 .group-item::before {
   content: url("imgs/iconmonstr-check-mark-15.svg");
   filter: var(--white-filter);
+}
+
+.item__title {
+  margin-bottom: 10px;
 }
 
 @keyframes glow {
@@ -388,11 +411,18 @@ h1 {
   .top {
     width: 100%;
   }
+  .split {
+    flex-direction: row;
+  }
   .split--left {
     width: 50%;
+    margin-right: 2.1875em;
   }
-
-  .split-right {
+  .split--right {
     width: 50%;
+    margin-top: 1.5em;
+  }
+  .title--split {
+    margin-top: 0;
   }
 }
