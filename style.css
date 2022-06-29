@@ -57,6 +57,22 @@ a {
 
 /* landing */
 
+.cta {
+  cursor: pointer;
+  text-align: center;
+  margin-left: 2.5em;
+  margin-bottom: 1em;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  border: 1px solid #43b7ff;
+}
+
+.landing--cta {
+  margin-top: 1em;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
 .landing-page {
   position: relative;
   background: url(imgs/background.webp) no-repeat;
@@ -89,16 +105,6 @@ a {
 .features__card,
 .card__title {
   text-align: center;
-}
-
-.cta {
-  cursor: pointer;
-  text-align: center;
-  margin-left: 2.5em;
-  margin-bottom: 1em;
-  padding: 15px 30px;
-  text-transform: uppercase;
-  border: 1px solid #43b7ff;
 }
 
 /* landing glow */
@@ -365,12 +371,16 @@ h1 {
 .container--footer {
   justify-content: space-between;
   align-items: flex-start;
-  min-height: 60vh;
+  min-height: 100vh;
   padding-top: 3em;
 }
 
 .container--footer > * {
   z-index: 2;
+}
+
+.footer__title {
+  margin-top: 1em;
 }
 
 .footer__title::after {
@@ -386,11 +396,13 @@ h1 {
 
 .footer__list__item {
   all: unset;
+  display: block;
+  margin-top: 1em;
 }
 
 .footer--dark {
-  height: 60vh;
-  opacity: 0.55;
+  height: 100vh;
+  opacity: 0.85;
 }
 
 .credits {
@@ -485,5 +497,17 @@ h1 {
   }
   footer {
     background-position: 0;
+    min-height: 80vh;
+  }
+  .container--footer {
+    min-height: 80vh;
+  }
+  .footer--dark {
+    height: 80vh;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
   }
 }
