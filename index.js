@@ -1,26 +1,12 @@
-// js for hamburger menu and possible dark mode
-// remember to use filter for images, so they get a bit darker and easier to look at.
-// #121212 for black
-// make a modal
-
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("open");
   menu.classList.toggle("menu-open");
 });
-/*
-const activeMenu = window.location.pathname;
-const menuItems = document.querySelectorAll(".menu__text").forEach((item) => {
-  if (item.href.includes(`${activeMenu}`)) {
-    item.classList.add("active-menu");
-  }
-});
-*/
+
 const didAnimationEnd = document.querySelector(".neon span");
 const animatedItems = document.querySelectorAll(".neon span");
-
-didAnimationEnd.addEventListener("animationend", equalizeDelay); // it works, just needed to convert it into a function, also no need to use equalizeDelay"()" here, as it already executes the function
 
 function equalizeDelay() {
   animatedItems.forEach((item) => {
@@ -31,3 +17,14 @@ function equalizeDelay() {
     item.style.animation = "pulsating 3s alternate infinite ease-in";
   });
 }
+didAnimationEnd.addEventListener("animationend", equalizeDelay);
+
+const ctaButton = document.querySelectorAll(".cta");
+const closeButton = document.querySelectorAll(".close");
+const popupModal = document.querySelectorAll(".modal");
+
+ctaButton.forEach((button) => {
+  button.addEventListener("click", () => {
+    popupModal.classList.toggle("active");
+  });
+});
