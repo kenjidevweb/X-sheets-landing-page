@@ -58,9 +58,18 @@
               <p class="landing-paragraph">x-treme rest for gamers</p>
               <button class="cta landing--cta"><span>pre-</span><span>order</span></button>
               <div class="modal">
-                <h2>Product Unavailable</h2>
-                <p>Due to the unexpectedly high number of orders we have sold out our entire stock, kindly fill in the form below to be notified when it becomes available</p>
-                <button class="close"></button>
+                <div class="modal__content container">
+                  <button class="close"></button>
+                  <img class="icon"src="imgs/sademoji.svg" alt="" aria-hidden="true">
+                  <h2>product unavailable</h2>
+                  <p>Due to the unexpectedly high number of orders we have sold out our entire stock, kindly fill in the form below to be notified when it becomes available</p>
+                  <form action="">
+                    <label for="email">Enter your email</label> 
+                    <input type="email" id="email" name="email" placeholder="youremail@email.com">
+                    </label>
+                    <button class="submit">Submit</button>
+                  </form>
+                </div>
               </div>
           </div>
           </div>
@@ -121,11 +130,11 @@
             <button class="cta">
               <span>pre-</span><span>order</span>
             </button>
-            <div class="modal">
+            <!-- <div class="modal"> probably not needed
               <h2>Product Unavailable</h2>
               <p>Due to the unexpectedly high number of orders we have sold out our entire stock, kindly fill in the form below to be notified when it becomes available</p>
               <button class="close"></button>
-            </div>
+            </div> -->
           </div>
         </div>  
       </section>

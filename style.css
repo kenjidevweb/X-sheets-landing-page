@@ -38,11 +38,7 @@ a {
   text-decoration: none;
 }
 
-/* reusable */
-
-.bold {
-  font-weight: bold;
-}
+/* generic */
 
 .container {
   display: flex;
@@ -57,6 +53,20 @@ a {
 .icon {
   width: 48px;
   height: 48px;
+  filter: var(--white-filter);
+}
+
+.modal {
+  visibility: hidden;
+  background-color: #121212;
+  position: fixed;
+  height: 400px;
+  max-width: 370px;
+  z-index: 50;
+}
+
+.visible {
+  display: block;
 }
 
 /* landing */
@@ -261,12 +271,6 @@ h1 {
   background-color: #121212;
 }
 
-.features__card .icon {
-  filter: var(
-    --white-filter
-  ); /* This changes the svg color, in this case to white */
-}
-
 .title {
   font-size: 2rem;
   margin-top: 2em;
@@ -356,6 +360,7 @@ h1 {
 .card__face.icon {
   width: 128px;
   height: 128px;
+  filter: none;
 }
 
 .title--split {
@@ -429,6 +434,23 @@ h1 {
 .phone-icon {
   width: 24px;
   height: 24px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.modal__content {
+  text-transform: none;
+  font-size: 1rem;
+  min-height: 100%;
+  gap: 1em;
+}
+
+.submit {
+  margin-top: 1em;
+  border: 1px solid #43b7ff;
+  padding: 15px 15px;
 }
 
 @keyframes glowUp {
@@ -534,13 +556,13 @@ h1 {
   }
   footer {
     background-position: 0;
-    min-height: 80vh;
+    min-height: 40vh;
   }
   .container--footer {
-    min-height: 80vh;
+    min-height: 40vh;
   }
   .footer--dark {
-    height: 80vh;
+    height: 40vh;
   }
   .footer-content {
     display: flex;
