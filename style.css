@@ -137,6 +137,10 @@ h1 {
   list-style: none;
 }
 
+.menu-open {
+  transform: translateY(0);
+}
+
 .menu__item {
   display: flex;
   margin-right: 20px;
