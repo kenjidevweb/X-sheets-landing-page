@@ -10,21 +10,29 @@ const animatedItems = document.querySelectorAll(".neon span");
 
 function equalizeDelay() {
   animatedItems.forEach((item) => {
-    item.style.animationDelay = "1s";
-    item.style.color = "#fff";
-    item.style.textShadow =
-      "0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff, 0 0 50px #43b7ff, 0 0 60px #43b7ff";
-    item.style.animation = "pulsating 3s alternate infinite ease-in";
+    item.setAttribute("id", "animation-phase-2");
   });
 }
 didAnimationEnd.addEventListener("animationend", equalizeDelay);
 
-const ctaButton = document.querySelectorAll(".cta");
-const closeButton = document.querySelectorAll(".close");
-const popupModal = document.querySelectorAll(".modal");
+const ctaBtn = document.querySelectorAll(".cta");
+const closeBtn = document.querySelector(".close");
+const popupModal = document.querySelector(".modal");
+const submitted = document.querySelector(".form-submitted");
+const preorderForm = document.querySelector(".preorder-form");
 
-ctaButton.forEach((button) => {
+ctaBtn.forEach((button) => {
   button.addEventListener("click", () => {
-    popupModal.classList.toggle("active");
+    popupModal.classList.add("active");
   });
+});
+
+closeBtn.addEventListener("click", () => {
+  popupModal.classList.remove("active");
+  submitted.classList.remove("active");
+});
+
+preorderForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  submitted.classList.add("active");
 });

@@ -56,17 +56,28 @@ a {
   filter: var(--white-filter);
 }
 
+.small--icon {
+  width: 24px;
+  height: 24px;
+  filter: var(--white-filter);
+}
+
+.close-menu {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  filter: var(--white-filter);
+}
+
 .modal {
+  border-radius: 8px;
   visibility: hidden;
   background-color: #121212;
   position: fixed;
   height: 400px;
   max-width: 370px;
   z-index: 50;
-}
-
-.visible {
-  display: block;
 }
 
 /* landing */
@@ -186,7 +197,7 @@ h1 {
   top: 0;
   bottom: 0;
   right: 0;
-  z-index: 4;
+  z-index: 99;
   gap: 1.5rem;
   color: #fff;
   list-style: none;
@@ -219,7 +230,7 @@ h1 {
   top: 0;
   right: 0;
   position: fixed;
-  z-index: 4;
+  z-index: 99;
   cursor: pointer;
   width: 48px;
   height: 48px;
@@ -376,7 +387,7 @@ h1 {
 }
 
 .group-item::before {
-  content: url("imgs/iconmonstr-check-mark-15.svg");
+  content: url("imgs/checkmark.svg");
   filter: var(--white-filter);
 }
 
@@ -441,6 +452,7 @@ h1 {
 }
 
 .modal__content {
+  position: relative;
   text-transform: none;
   font-size: 1rem;
   min-height: 100%;
@@ -448,9 +460,47 @@ h1 {
 }
 
 .submit {
-  margin-top: 1em;
   border: 1px solid #43b7ff;
   padding: 15px 15px;
+}
+
+.close {
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.form-submitted {
+  visibility: hidden;
+  display: inline-block;
+  width: 60%;
+  color: #43b7ff;
+  margin-left: 1em;
+}
+
+.submit-content {
+  margin-top: 1em;
+  display: flex;
+}
+
+#animation-phase-2 {
+  /*using id since ill be adding it with js and because of specificity */
+  color: #fff;
+  animation: pulsating 3s alternate infinite ease-in;
+  text-shadow: 0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff,
+    0 0 50px #43b7ff, 0 0 60px #43b7ff;
+}
+
+.active {
+  visibility: visible;
+}
+
+.links--container {
+  margin-top: 0.75em;
+  min-height: auto;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
 @keyframes glowUp {
@@ -488,14 +538,27 @@ h1 {
   }
 }
 
-/*Tablets */
-
-@media (min-width: 600px) {
-}
-
 /*Notebooks+Desktop*/
 
 @media (min-width: 900px) {
+  .menu {
+    backdrop-filter: none;
+    background-color: #121212;
+    transform: translateY(0);
+    flex-direction: row;
+    bottom: auto;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .hamburger {
+    display: none;
+  }
+  .menu__item:first-child {
+    margin-top: 0;
+  }
+  .menu__text {
+    margin-right: 0;
+  }
   .menu__text:hover,
   .menu__text:focus-visible {
     text-decoration: underline;
@@ -568,5 +631,10 @@ h1 {
     display: flex;
     justify-content: space-around;
     width: 100%;
+  }
+  .close-menu {
+    width: 40px;
+    height: 40px;
+    margin: -15px;
   }
 }
