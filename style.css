@@ -38,6 +38,10 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  z-index: 3;
+}
+
 /* generic */
 
 .container {
@@ -80,6 +84,14 @@ a {
   z-index: 50;
 }
 
+.dark {
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  min-height: 100%;
+  opacity: 0.35;
+}
+
 /* landing */
 
 .cta {
@@ -95,7 +107,7 @@ a {
   border: 1px solid #43b7ff;
 }
 
-/* The animation syncs every 3 iterations since they end up happening at the same time  */
+/* Animated button  */
 
 .cta span:nth-child(1) {
   animation: pulsatingInfinite 2s linear infinite;
@@ -105,86 +117,8 @@ a {
   animation: pulsatingInfinite 3s linear infinite;
 }
 
-.landing--cta {
-  margin-top: 1em;
-  margin-left: 0;
-  margin-bottom: 0;
-}
-
-.landing-page {
-  position: relative;
-  background: url(imgs/background.webp) no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.dark {
-  position: absolute;
-  background-color: #000;
-  width: 100%;
-  height: 100%;
-  opacity: 0.35;
-}
-
-.landing-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-transform: uppercase;
-  font-size: 3em;
-}
-
-.landing-paragraph,
-.top,
-.features__card,
-.card__title {
-  text-align: center;
-}
-
-/* landing glowUp */
-
-.neon span {
-  color: #646464;
-  animation: glowUp 2.5s linear forwards;
-}
-
-.neon span:nth-child(1),
-.neon span:nth-child(2),
-.neon span:nth-child(4) {
-  animation-delay: 1s;
-}
-
-.neon span:nth-child(3) {
-  animation-delay: 1.2s;
-}
-
-.neon span:nth-child(5),
-.neon span:nth-child(6) {
-  animation-delay: 2s;
-}
-
-.neon span:nth-child(7),
-.neon span:nth-child(9) {
-  animation-delay: 2.75s;
-}
-
-.neon span:nth-child(8) {
-  animation-delay: 3s;
-}
-
-h1 {
-  z-index: 3;
-}
-
-.active-menu {
-  border-right: 4px solid #2100f2;
-}
-
 /* hamburger menu */
+
 .menu {
   backdrop-filter: blur(8px);
   display: flex;
@@ -207,8 +141,6 @@ h1 {
   display: flex;
   margin-right: 20px;
   justify-content: center;
-  /*border: 1px solid #333;
-  width: 100%;*/
 }
 
 .menu__item:first-child {
@@ -220,10 +152,6 @@ h1 {
   font-size: 1.5rem;
   text-transform: uppercase;
   text-decoration: none;
-}
-
-.menu-open {
-  transform: translateY(0);
 }
 
 .hamburger {
@@ -276,15 +204,80 @@ h1 {
   transform: scale(0.98);
 }
 
-/* introduction */
+/* landing page */
 
-.background--black {
-  background-color: #121212;
+.landing--cta {
+  margin-top: 1em;
+  margin-left: 0;
+  margin-bottom: 0;
 }
+
+.landing-page {
+  position: relative;
+  background: url(imgs/background.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+.landing-paragraph,
+.top,
+.features__card,
+.card__title {
+  text-align: center;
+}
+
+/* landing glowUp animation */
+
+.neon span {
+  color: #646464;
+  animation: glowUp 2.5s linear forwards;
+}
+
+.neon span:nth-child(1),
+.neon span:nth-child(2),
+.neon span:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.neon span:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+.neon span:nth-child(5),
+.neon span:nth-child(6) {
+  animation-delay: 2s;
+}
+
+.neon span:nth-child(7),
+.neon span:nth-child(9) {
+  animation-delay: 2.75s;
+}
+
+.neon span:nth-child(8) {
+  animation-delay: 3s;
+}
+
+.active-menu {
+  border-right: 4px solid #2100f2;
+}
+
+/* introduction */
 
 .title {
   font-size: 2rem;
-  margin-top: 2em;
+  margin-top: 4em;
   margin-bottom: 0.5em;
   text-align: center;
 }
@@ -315,12 +308,6 @@ h1 {
   display: flex;
   flex-direction: column;
   background-color: #121212;
-}
-
-.split-group {
-}
-
-.split--left {
 }
 
 .split--two {
@@ -362,6 +349,11 @@ h1 {
 .card__title--testimonials {
   margin-top: 2em;
   color: #43b7ff;
+}
+
+.job-title {
+  margin-bottom: 2em;
+  text-align: center;
 }
 
 .card__face {
@@ -434,7 +426,7 @@ h1 {
 }
 
 .footer--dark {
-  height: 100vh;
+  min-height: 100vh;
   opacity: 0.85;
 }
 
@@ -442,12 +434,7 @@ h1 {
   align-self: center;
 }
 
-.phone-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.bold {
+.adress {
   font-weight: bold;
 }
 
@@ -484,14 +471,6 @@ h1 {
   display: flex;
 }
 
-#animation-phase-2 {
-  /*using id since ill be adding it with js and because of specificity */
-  color: #fff;
-  animation: pulsating 3s alternate infinite ease-in;
-  text-shadow: 0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff,
-    0 0 50px #43b7ff, 0 0 60px #43b7ff;
-}
-
 .active {
   visibility: visible;
 }
@@ -502,6 +481,8 @@ h1 {
   justify-content: space-around;
   flex-direction: row;
 }
+
+/* animations */
 
 @keyframes glowUp {
   0%,
@@ -538,12 +519,19 @@ h1 {
   }
 }
 
-/*Notebooks+Desktop*/
+#animation-phase-2 {
+  color: #fff;
+  animation: pulsating 3s alternate infinite ease-in;
+  text-shadow: 0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff,
+    0 0 50px #43b7ff, 0 0 60px #43b7ff;
+}
+
+/* Media queries for notebooks + desktop */
 
 @media (min-width: 900px) {
   .menu {
     backdrop-filter: none;
-    background-color: #121212;
+    background-color: rgba(18, 18, 18, 0.1);
     transform: translateY(0);
     flex-direction: row;
     bottom: auto;
@@ -571,11 +559,11 @@ h1 {
   .introduction.container p {
     margin-bottom: 3em;
   }
-  .title {
-    margin-top: 4em;
-  }
   .card__icon {
     margin-bottom: 2em;
+  }
+  .job-title {
+    margin-bottom: 1em;
   }
   .paragraph {
     margin-bottom: 1em;
@@ -619,13 +607,11 @@ h1 {
   }
   footer {
     background-position: 0;
-    min-height: 40vh;
   }
-  .container--footer {
+  .container--footer,
+  .footer--dark,
+  footer {
     min-height: 40vh;
-  }
-  .footer--dark {
-    height: 40vh;
   }
   .footer-content {
     display: flex;
