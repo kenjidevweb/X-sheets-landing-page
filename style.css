@@ -450,6 +450,10 @@ h1 {
   gap: 1em;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 .submit {
   border: 1px solid #43b7ff;
   padding: 15px 15px;
