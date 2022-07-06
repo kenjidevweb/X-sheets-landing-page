@@ -368,6 +368,7 @@ h1 {
   width: 128px;
   height: 128px;
   filter: none;
+  box-shadow: 0 0 0 2px hsl(0, 0%, 80%);
 }
 
 .title--split {
