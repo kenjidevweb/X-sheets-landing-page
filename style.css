@@ -538,7 +538,12 @@ h1 {
 /* Media queries for notebooks + desktop */
 
 @media (min-width: 900px) {
-  .menu {
+  /* Uncomment these lines to show up the nav
+     as the desktop version.
+     I'm revisiting this project and I think 
+     the hamburger menu goes well with this design 
+  */
+  /* .menu {
     backdrop-filter: none;
     background-color: rgba(18, 18, 18, 0.1);
     transform: translateY(0);
@@ -549,10 +554,10 @@ h1 {
   }
   .hamburger {
     display: none;
-  }
-  .menu__item:first-child {
+  } */
+  /* .menu__item:first-child {
     margin-top: 0;
-  }
+  } */
   .menu__text {
     margin-right: 0;
   }
