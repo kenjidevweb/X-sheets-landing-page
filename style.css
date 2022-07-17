@@ -638,3 +638,16 @@ h1 {
     margin: -15px;
   }
 }
+
+@media (max-width: 300px) {
+  /* For foldable phones */
+  .neon {
+    font-size: 3rem;
+  }
+  .landing-paragraph {
+    font-size: 1.5rem;
+  }
+  .cta {
+    font-size: 2rem;
+  }
+}
