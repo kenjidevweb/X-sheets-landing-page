@@ -424,14 +424,18 @@ h1 {
   position: relative;
 }
 
-.footer__item {
+.footer__menu__item {
   all: unset;
   display: block;
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+
+.footer__contact__item {
   margin-top: 1em;
 }
 
 .footer--dark {
-  min-height: 100vh;
   opacity: 0.85;
 }
 
@@ -543,26 +547,31 @@ h1 {
      I'm revisiting this project and I think 
      the hamburger menu goes well with this design 
   */
-  /* .menu {
+  .menu {
+    margin-top: 1em;
     backdrop-filter: none;
     background-color: rgba(18, 18, 18, 0.1);
     transform: translateY(0);
     flex-direction: row;
     bottom: auto;
-    justify-content: space-evenly;
+    position: absolute;
+    justify-content: flex-end;
     align-items: center;
   }
   .hamburger {
     display: none;
-  } */
-  /* .menu__item:first-child {
-    margin-top: 0;
-  } */
+  }
+  .menu__item:first-child {
+    display: none;
+  }
   .menu__text {
     margin-right: 0;
+    font-size: 1em;
   }
   .menu__text:hover,
-  .menu__text:focus-visible {
+  .menu__text:focus-visible,
+  .footer__item:hover,
+  .footer__item:focus-visible {
     text-decoration: underline;
     transform: scale(1.1);
     animation: glowUp 2.5s linear infinite;
