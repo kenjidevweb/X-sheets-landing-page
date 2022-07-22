@@ -76,7 +76,7 @@ h1 {
 
 .modal {
   border-radius: 8px;
-  visibility: hidden;
+  visibility: hidden; /* using visibilty instead of display: none because the allocated space helps maintain the layout when showing the confirmation message */
   background-color: #121212;
   position: fixed;
   height: 400px;
@@ -261,16 +261,16 @@ h1 {
 
 .neon span:nth-child(5),
 .neon span:nth-child(6) {
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
 .neon span:nth-child(7),
 .neon span:nth-child(9) {
-  animation-delay: 2.75s;
+  animation-delay: 1.75s;
 }
 
 .neon span:nth-child(8) {
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
 .active-menu {
@@ -362,12 +362,8 @@ h1 {
 
 .card__face {
   border-radius: 50%;
-}
-
-.card__face.icon {
   width: 128px;
   height: 128px;
-  filter: none;
   box-shadow: 0 0 0 2px hsl(0, 0%, 80%);
 }
 
@@ -534,7 +530,7 @@ h1 {
 
 #animation-phase-2 {
   color: #fff;
-  animation: pulsating 3s alternate infinite ease-in;
+  animation: pulsating 2s alternate infinite ease-in;
   text-shadow: 0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff,
     0 0 50px #43b7ff, 0 0 60px #43b7ff;
 }
@@ -558,9 +554,7 @@ h1 {
     justify-content: flex-end;
     align-items: center;
   }
-  .hamburger {
-    display: none;
-  }
+  .hamburger,
   .menu__item:first-child {
     display: none;
   }
@@ -570,8 +564,8 @@ h1 {
   }
   .menu__text:hover,
   .menu__text:focus-visible,
-  .footer__item:hover,
-  .footer__item:focus-visible {
+  .footer__menu__link:hover,
+  .footer__menu__link:focus-visible {
     text-decoration: underline;
     transform: scale(1.1);
     animation: glowUp 2.5s linear infinite;
@@ -585,9 +579,7 @@ h1 {
   .card__icon {
     margin-bottom: 2em;
   }
-  .job-title {
-    margin-bottom: 1em;
-  }
+  .job-title,
   .paragraph {
     margin-bottom: 1em;
   }
@@ -648,8 +640,19 @@ h1 {
   }
 }
 
+@media (max-width: 360px) {
+  .neon {
+    font-size: 3.75rem;
+  }
+  .landing-paragraph {
+    font-size: 2.25rem;
+  }
+  .cta {
+    padding: 15px 15px;
+  }
+}
+
 @media (max-width: 300px) {
-  /* For foldable phones */
   .neon {
     font-size: 3rem;
   }
@@ -658,5 +661,27 @@ h1 {
   }
   .cta {
     font-size: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .cta span,
+  .neon span {
+    animation: none !important;
+    /* 
+       I think it's fine to use !important here, since it's such a specific situation,
+       alternatively I could add an id to the parents and just use animation: none,
+       I feel like this way it's easier because if this was a real project we could
+       just add new elements here without having to add the id in the new html elements.
+    */
+    text-shadow: 0 0 10px #43b7ff, 0 0 20px #43b7ff, 0 0 40px #43b7ff,
+      0 0 50px #43b7ff, 0 0 60px #43b7ff;
+    color: white;
+  }
+  .menu__text:hover,
+  .menu__text:focus-visible,
+  .footer__menu__link:hover,
+  .footer__menu__link:focus-visible {
+    animation: none;
   }
 }
